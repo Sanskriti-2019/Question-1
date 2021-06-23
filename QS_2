@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int x,y,z,t,w,month,year;
+	int daily_expenses,monthly_expenses;
+	printf("\nEnter expenses on milk,non-veg,fruits,grocery and vegetables and the current month and year: ");
+	scanf("%d %d %d %d %d %d %d",&x,&y,&z,&t,&w,&month,&year);
+	int arr[12] = {31, 28, 31, 30, 31, 30, 31,31, 30, 31, 30, 31};
+	if(y>x && y>z && y>w)
+	{
+		if(month<=12)
+		{
+			if(year>0)
+			{
+				daily_expenses=x+y+z+w+t;
+				monthly_expenses=daily_expenses*arr[month-1];
+				printf("%d %d",daily_expenses,monthly_expenses);
+			}
+			else
+				printf("Error");
+		}
+		else
+			printf("Error");
+	}
+	else
+		printf("Error");
+}
