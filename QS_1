@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int i,n;
+	int Currency[10] = {2000,500,200,100,50,20,10,5,2,1};
+	int countCurrency[10] = { 0 };
+	printf("Enter the amount: ");
+	scanf("%d",&n);
+	for(i=0; i<10; i++)
+	{
+		if (n >= Currency[i]) {
+            countCurrency[i] = n / Currency[i];
+            n = n - countCurrency[i] * Currency[i];
+        }
+	}
+	for (int i = 0; i < 10; i++) {
+        if (countCurrency[i] != 0) {
+           printf("%d",countCurrency[i]);
+        }
+        else
+        {
+        	printf("0");
+		    }
+    }
+}
