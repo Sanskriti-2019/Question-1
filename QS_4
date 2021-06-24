@@ -1,0 +1,50 @@
+#include<stdio.h>
+int main()
+{
+	int n,i,j,p=1,q=1;
+	printf("Total numbers and the individual number: ");
+	scanf("%d",&n);
+	int arr[100];
+	if(n>0)
+	{
+		for(i=0;i<n;i++)
+		{
+			scanf("%d",&arr[i]);
+		}
+		for(i=0;i<n;i++)
+		{
+			for(j=1;j<arr[i];j++)
+			{
+				if(i%2==0)
+				{
+					p *= arr[i];
+					p++;
+				}
+				else
+				{
+					q *= arr[i];
+					q++;
+				}
+			}
+		}
+		for(i=0;i<n;i++)
+		{
+			if(q>p)
+			{
+				printf("\nMagical");
+			}
+			else if(p>q)
+			{
+				printf("\nDominant");
+			}
+			else
+			{
+				printf("\nError");
+			}
+		}
+	}
+	else
+	{
+		printf("Error");
+	}
+}
