@@ -1,0 +1,31 @@
+#include<stdio.h>
+void egg_calcte(int,int []);
+int main()
+{   int no_swans;
+    printf("Enter the no of swans\n");
+    scanf("%d",&no_swans);
+    int arr[no_swans];
+    printf("Enter the age for %d no swans in weeks\n",no_swans);
+    for(int i=0;i<no_swans;i++)
+        scanf("%d",&arr[i]);
+    egg_calcte(no_swans,arr);
+    return 0;
+}
+void egg_calcte(int no_swans,int arr[])
+{
+    int week=0,total_eggs=0;
+    for(int i=0;i<no_swans;i++)
+    {     if(arr[i]<=0)
+        {   printf("ERROR");
+            exit(0);
+        }
+        if(arr[i]>=52)
+            week=week+4;
+        else
+        {   arr[i]=arr[i]+4;
+            if(arr[i]>=52)
+            week=week+(arr[i]-52);
+        }
+    }
+    printf("Total no eggs are %d",total_eggs=week*4);
+}
